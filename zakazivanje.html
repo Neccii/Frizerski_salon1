@@ -2,123 +2,103 @@
 <html lang="sr">
 <head>
   <meta charset="UTF-8">
-  <title>Kontakt - Frizerski salon Brazor</title>
+  <title>Zakazivanje - Brazor</title>
 
-   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-light">
 
-  <header class="bg-dark text-white text-center py-4">
-    <h1 class="mb-0">Kontaktirajte nas</h1>
-  </header>
+<!-- TOAST PORUKA -->
+<div id="toast" class="toast-box"></div>
 
-  
-  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Brazor</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<header class="bg-dark text-white text-center py-4">
+  <h1>Zakazivanje termina</h1>
+  <p>Radno vreme: 08:00 – 18:00 (nedelja neradna)</p>
+</header>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="onama.html">O nama</a></li>
-          <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
-          <li class="nav-item"><a class="nav-link" href="zakazivanje.html">Zakazivanje</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/berbernicabrazor/" target="_blank">Instagram</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <div class="container">
 
-  
-  <div class="container my-4">
-    <div class="row g-4">
+    <a class="navbar-brand" href="index.html">Brazor</a>
 
-      
-      <div class="col-md-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Frizerski salon Brazor</h2>
-            <p>
-              Nalazimo se u samom centru Arilja, u ulici
-              <strong>Ive Lole Ribara 3</strong>.
-            </p>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <h5>Kontakt podaci</h5>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><strong>Adresa:</strong> Ive Lole Ribara 3, 31230 Arilje</li>
-              <li class="list-group-item"><strong>Telefon:</strong> 060/6893-751</li>
-              <li class="list-group-item"><strong>Instagram:</strong> @berbernicabrazor</li>
-              <li class="list-group-item"><strong>Email:</strong> brazor.salon@gmail.com</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
 
-      
-      <div class="col-md-7">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title mb-3">Pošaljite nam poruku</h3>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Naslovna</a>
+        </li>
 
-            <form>
-              <div class="mb-3">
-                <label class="form-label">Ime i prezime</label>
-                <input type="text" class="form-control" required>
-              </div>
+        <li class="nav-item">
+          <a class="nav-link" href="onama.html">O nama</a>
+        </li>
 
-              <div class="mb-3">
-                <label class="form-label">Email adresa</label>
-                <input type="email" class="form-control" required>
-              </div>
+        <li class="nav-item">
+          <a class="nav-link" href="kontakt.html">Kontakt</a>
+        </li>
 
-              <div class="mb-3">
-                <label class="form-label">Vaša poruka</label>
-                <textarea class="form-control" rows="5" required></textarea>
-              </div>
 
-              <button type="submit" class="btn btn-dark w-100">
-                Pošalji poruku
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.instagram.com/berbernicabrazor/" target="_blank">Instagram</a>
+        </li>
 
+      </ul>
     </div>
 
-    
-    <div class="card mt-4">
-      <div class="card-body">
-        <h3 class="card-title">Naša lokacija</h3>
-        <iframe 
-          src="https://www.google.com/maps?q=Ive%20Lole%20Ribara%203%2C%20Arilje%2C%20Srbija&output=embed"
-          width="100%" height="300"
-          style="border:0; border-radius:10px;"
-          loading="lazy">
-        </iframe>
+  </div>
+</nav>
+
+<div class="container my-4">
+  <div class="row">
+
+    <!-- LEVA STRANA - FORMA -->
+    <div class="col-md-6">
+      <div class="card p-4 shadow">
+
+        <h3 class="mb-3">Zakaži termin</h3>
+
+        <form id="rezervacijaForma">
+
+          <label>Ime i prezime:</label>
+          <input type="text" id="ime" class="form-control mb-2" required>
+
+          <label>Datum:</label>
+          <input type="date" id="datum" class="form-control mb-2" required>
+
+          <label>Vreme (na 30 min):</label>
+          <input type="time" id="vreme" class="form-control mb-2" required>
+
+          <button type="submit" class="btn btn-primary w-100">
+            Zakaži
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+    <!-- DESNA STRANA - TERMINI -->
+    <div class="col-md-6">
+      <div class="card p-4 shadow">
+
+        <h3 class="mb-3">Zauzeti termini</h3>
+
+        <ul id="listaTermina" class="list-group"></ul>
+
       </div>
     </div>
 
   </div>
+</div>
 
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">&copy; 2025 Frizerski salon "Brazor" | Arilje</p>
-  </footer>
+<!-- JS -->
+<script src="index.js"></script>
 
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
