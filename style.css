@@ -174,3 +174,22 @@ footer {
   margin: 20px;
   gap: 20px;
 }
+
+.toast-box {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.toast-box.show {
+  display: block;
+}
